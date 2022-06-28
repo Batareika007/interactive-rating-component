@@ -1,5 +1,7 @@
 @import 'normalize';
 @import 'colors';
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+
 
 /* hide scroll bar if needed */
 
@@ -37,20 +39,152 @@ select {
 }
 
 /** ============ start  custom style ============ */
-
-
-
-.wrapper {
-    min-height: 100%;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
+body {
+    font-family: 'Overpass',
+        sans-serif;
+    font-size: 15px;
+    background-color: $bg_color;
+    color: $white;
 }
 
 .container {
-    max-width: 1160px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    min-height: 100vh;
+    padding: 2rem;
 }
 
+
+main {
+    // position: relative;
+    margin-bottom: 2rem;
+}
+
+.card {
+    background-color: $card_bg_color;
+    border-radius: 1rem;
+    padding: 2rem;
+
+    &__top {
+        background-color: $card_circl;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+    }
+
+    &__star {
+        position: relative;
+        background-color: $card_circl;
+        width: 3rem;
+        height: 3rem;
+        border-radius: 100%;
+        color: $text_color;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $orange;
+            color: $white;
+        }
+
+        label {
+            cursor: pointer;
+        }
+    }
+
+    &__text {
+        max-width: 336px;
+        line-height: 150%;
+        color: $text_color;
+        margin-bottom: 1rem;
+    }
+
+    // thank you card
+    .card__thanku {
+        width: 162px;
+        height: 108px;
+        display: block;
+        margin: 0 auto 1rem;
+
+    }
+
+    &__result {
+        display: inline-block;
+        color: $orange;
+        background-color: $card_circl;
+        line-height: 200%;
+        padding: 0rem 1rem;
+        border-radius: 1rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+    }
+
+    &__header {
+        margin-bottom: 1rem;
+    }
+}
+
+.form__chose {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+input {
+    display: none;
+}
+
+input[type="radio"]:checked {
+    +label {
+        background-color: $text_color;
+        color: $white
+    }
+
+}
+
+
+button {
+    width: 100%;
+    background-color: $orange;
+    color: inherit;
+    border-radius: 2rem;
+    padding: 0.6rem 0;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $white;
+        color: $orange;
+    }
+}
+
+.thanku {
+    display: none;
+}
+
+section {
+    min-width: 320px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.active {
+    display: block;
+    animation: thank_u 1.5s ease-out;
+}
+
+@keyframes thank_u {
+    0% {
+        transform: translate(-50%, -250%);
+    }
+
+    90% {
+
+        transform: translate(-50%, -45%);
+    }
+
+    100% {
+        transform: translate(-50%, -50%);
+    }
+}

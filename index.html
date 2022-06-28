@@ -1,49 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
+  <link rel="stylesheet" href="css/style.css">
   <title>Frontend Mentor | Interactive rating component</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <main>
+      <section>
+        <div class="card">
+          <div class="card__top flex-center"> <img src="images/icon-star.svg" alt="star"></div>
+          <h1 class="card__header">
+            How did we do?
+          </h1>
+          <div class="card__text">
+            Please let us know how we did with your support request. All feedback is appreciated
+            to help us improve our offering!
+          </div>
+          <div class="card__form">
+            <!-- form -->
+            <!-- <form method="get" id="myform"> -->
+            <form method="get" id="starForm" onsubmit="return thankU();">
 
-  <!-- Rating state start -->
+              <div class="form__chose">
 
-  How did we do?
+                <input type="radio" name="star" id="one" value="1" required>
+                <label for="one" class="card__star flex-center">1</label>
 
-  Please let us know how we did with your support request. All feedback is appreciated 
-  to help us improve our offering!
+                <input type="radio" name="star" id="two" value="2" required>
+                <label for="two" class="card__star flex-center">2</label>
 
-  1 2 3 4 5
 
-  Submit
+                <input type="radio" name="star" id="three" value="3" required>
+                <label for="three" class="card__star flex-center">3</label>
 
-  <!-- Rating state end -->
+                <input type="radio" name="star" id="foure" value="4" required>
+                <label for="foure" class="card__star flex-center">4</label>
 
-  <!-- Thank you state start -->
+                <input type="radio" name="star" id="five" value="5" required>
+                <label for="five" class="card__star flex-center">5</label>
 
-  You selected <!-- Add rating here --> out of 5
+              </div>
 
-  Thank you!
+              <button id="btn" type="submit">Submit</button>
 
-  We appreciate you taking the time to give a rating. If you ever need more support, 
-  don’t hesitate to get in touch!
+            </form>
+          </div>
+        </div>
+        <!-- Thank you state start -->
+      </section>
 
-  <!-- Thank you state end -->
+      <section class="thanku">
 
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+        <div class="card" style="text-align:center">
+          <img class="card__thanku" src="images/illustration-thank-you.svg" alt="smart phone ilustrator">
+
+          <div class="card__result">
+            You selected <span id="star_result">#</span> out of 5
+          </div>
+
+          <h2 class="card__header">
+            Thank you!
+          </h2>
+
+
+
+          <div class="card__text">
+            We appreciate you taking the time to give a rating. If you ever need more support,
+            don’t hesitate to get in touch!
+          </div>
+
+          <!-- Thank you state end -->
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="#" target="_blank">Alexei</a>.
+      </div>
+    </footer>
   </div>
+  <script src="script.js"></script>
 </body>
+
 </html>
