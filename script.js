@@ -11,9 +11,14 @@ const starResult = document.getElementById('star_result');
 const mainForm = document.getElementById('myform');
 
 
-thankU = () => {
+const thankU = () => {
     let selected = document.querySelector('input[type=radio]:checked');
     thankUCard.classList.add('active');
     starResult.innerText = selected.value;
+
+    window.setTimeout(function () {
+        mainForm.submit();
+    }, 2500);
+
     return false;
 }
